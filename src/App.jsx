@@ -1,10 +1,12 @@
+// -components-
+import Navbar from "./components/Navbar"
+import Home from "./pages/home/Home"
 
 function App() {
-
-
   return (
     <>
-      <h1>upart clone</h1>
+      <Navbar />
+      <Home />
     </>
   )
 }

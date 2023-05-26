@@ -1,8 +1,15 @@
-* {
-  margin: 0;
-}
-body {
-  width: 100dvw;
-  height: 100dvh;
-  overflow-x: hidden;
-}
+// --abstracts--
+@import "./abstracts/colors";
+@import "./abstracts/fontSize";
+@import "./abstracts/fontFamilys";
+@import "./abstracts/mediaQuery";
+// --base css--
+@import "./base/base";
+@import "./base/containers";
+// --components--
+@import "./components/buttons";
+@import "./components/searchComponent";
+// --layouts css--
+@import "./layout/navbar";
+// --pages--
+@import "./pages/home";

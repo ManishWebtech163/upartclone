@@ -1,0 +1,109 @@
+.navbar {
+  // padding: 1em;
+  background-color: $blackBackground;
+  .container {
+    position: relative;
+
+    .items {
+      position: relative;
+      display: grid;
+      grid-template-columns: 15% 70% 15%;
+      align-items: center;
+
+      .icon {
+        padding: 1em;
+        img {
+          width: 150px;
+          margin-left: 1em;
+        }
+      }
+      .links {
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+      }
+      // -
+      .navBtn {
+        display: none;
+        color: $whiteColor;
+      }
+      // -
+      .loginBtn {
+        display: none !important;
+      }
+      // -
+      .cartBtns {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 1em;
+        span {
+          color: $whiteColor;
+        }
+      }
+      // -
+      a {
+        font-size: calc($f-medium - 5px);
+        color: $whiteColor;
+        opacity: 0.7;
+        padding: 1em;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (width < $lDevice) {
+  .navbar {
+    font-size: 14px;
+    .items {
+    }
+  }
+}
+
+@media (width < $mDevice) {
+  .navbar {
+    font-size: 14px;
+    .container {
+      .items {
+        grid-template-columns: 1fr 50px 150px;
+        .links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: $blackBackground;
+          z-index: 10;
+          flex-direction: column;
+          // -for  hide-
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transition: 0.3s;
+
+          &.navActive {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+          }
+        }
+        // -
+        .navBtn {
+          display: flex;
+          justify-content: end;
+          color: $whiteColor;
+        }
+        // -
+        .loginBtn {
+          display: flex;
+          justify-content: end;
+          padding: 1em;
+        }
+      }
+    }
+  }
+}

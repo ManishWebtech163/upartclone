@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $latoFamily;
+}
+html {
+  color-scheme: light dark;
+  font-size: 16px;
+}
+body {
+  width: 100dvw;
+  height: 100dvh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
