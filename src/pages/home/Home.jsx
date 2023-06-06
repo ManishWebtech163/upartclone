@@ -5,6 +5,11 @@ import SearchSection from './searchSection/SearchSection'
 import CategoriesSection from './categoriesSection/CategoriesSection'
 import FeaturedArtistsSection from './featuredArtistsSection/FeaturedArtistsSection'
 import MasterClassSection from './masterClassSection/MasterClassSection'
+import WhyUpartSection from './whyUpartSection/WhyUpartSection'
+import HowMakeSection from './howMakeSection/HowMakeSection'
+import HowWorkSection from './howWorkSection/HowWorkSection'
+import SendFeedbackSection from './sendFeedbackSection/SendFeedbackSection'
+import RegisterFormSection from './registerFromSection/RegisterFormSection'
 
 export default function Home() {
     return (
@@ -16,6 +21,11 @@ export default function Home() {
                 <CategoriesSection />
                 <FeaturedArtistsSection />
                 <MasterClassSection />
+                <WhyUpartSection />
+                <HowMakeSection />
+                <HowWorkSection />
+                <SendFeedbackSection />
+                <RegisterFormSection />
             </div>
         </main>
     )

@@ -9,7 +9,12 @@
 // --components--
 @import "./components/buttons";
 @import "./components/searchComponent";
+@import "./components/registerForm";
+@import "./components/loginForm";
+@import "./components/artistCard";
 // --layouts css--
 @import "./layout/navbar";
 // --pages--
 @import "./pages/home";
+@import "./pages/artistPage";
+@import "./pages/artistDetailsPage";

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Button({ text, action }) {
+export default function Button_common({ text, action, type }) {
     return (
-        <button className='commonButton' onClick={action}>{text}</button>
+        <button type={type} className='commonButton' onClick={action}>{text}</button>
     )
 }
