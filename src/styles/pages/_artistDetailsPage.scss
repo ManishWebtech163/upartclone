@@ -1,6 +1,466 @@
 .artistDetailsPage {
   font-size: 16px;
 }
+// --
+.artistDetailsPage .artistDetailsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2em;
+  @media (width < $lDevice) {
+    font-size: 14px;
+  }
+  @media (width < $mDevice) {
+    grid-template-columns: 60% 40%;
+  }
+  @media (width < $sDevice) {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+}
 
-.artistDetailsPage {
+// --
+.artistDetailsPage .artistDetailsContainer .artistProfileDiv {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  padding-bottom: 2em;
+  @media (width < $lDevice) {
+    grid-template-columns: 120px 1fr;
+  }
+  @media (width < $sDevice) {
+    grid-template-columns: 1fr;
+  }
+  .profileImg {
+    img {
+      width: 80%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin: auto;
+    }
+    @media (width < $sDevice) {
+      grid-area: 1/-1, 1 /2;
+      padding-bottom: 1em;
+      img {
+        width: 150px;
+        margin-right: auto;
+        margin-left: unset;
+      }
+    }
+  }
+
+  // -
+  .detials {
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5em;
+      margin-bottom: 2em;
+      > div {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .name {
+        grid-column: 1/ 3;
+        font-size: clamp(1.5em, 2vw, 2.5em);
+        font-weight: 500;
+        span {
+          font-family: $playfairDisplayFamily;
+        }
+        .icon {
+          margin-top: 5px;
+        }
+      }
+      .likeBtns {
+        grid-column: 3 / -1;
+        text-align: center;
+      }
+
+      .proffesion {
+        grid-column: 1/ 2;
+      }
+
+      .location {
+        grid-column: 2 / -1;
+      }
+      .price {
+        grid-column: 1 / -1;
+        .mainPrice {
+          font-size: $f-medium;
+          font-weight: 600;
+          color: $greenColor;
+        }
+        .advancePrice {
+          font-weight: 500;
+          color: $blackColor;
+        }
+      }
+    }
+
+    .btns {
+      display: flex;
+      gap: 1em;
+      width: min(400px, 95%);
+
+      button {
+        padding: 0.8em;
+      }
+      .contactBtn {
+        width: 100%;
+        border-radius: 54px;
+        border: 2px solid $skyBlueColor;
+        color: $skyBlueColor;
+        font-size: $f-normal;
+        font-weight: 600;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// --
+.artistDetailsPage .artistDetailsContainer .bioDiv {
+  position: relative;
+  padding: 0.5em 2em;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $grayColor;
+    border-radius: 50%;
+    opacity: 0.7;
+    @media (width < $sDevice) {
+      display: none;
+    }
+  }
+  @media (width < $mDevice) {
+    padding: 0.5em 0em;
+  }
+
+  h3 {
+    font-size: $f-medium;
+    color: $brickRedColor;
+    margin-bottom: 1em;
+  }
+  .pera {
+    color: $grayColor;
+  }
+}
+// --
+.artistDetailsPage .artistDetailsContainer .artistDetailsTabs {
+  padding: 2em 0 0 0;
+  grid-column: 1/-1;
+  width: 100%;
+  .tabsDiv {
+    position: relative;
+    ::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $grayColor;
+      z-index: -1;
+    }
+    .css-12jhih3-MuiTabs-indicator {
+      height: 5px;
+      top: 0px;
+      border-radius: 5px;
+    }
+  }
+
+  // --artistGalleryDiv--
+  .artistGalleryContainer {
+    .artistGalleryDiv {
+      display: flex;
+      gap: 1em;
+      padding: 1em 0;
+      flex-wrap: wrap;
+      overflow: hidden;
+      .artistAlbum {
+        width: auto;
+        display: contents;
+        position: relative;
+        overflow: hidden;
+        .initialPoint {
+          width: 18%;
+          aspect-ratio: 16/16;
+          overflow: hidden;
+          position: relative;
+          z-index: 10;
+          @media (width < $lDevice) {
+            width: 25%;
+          }
+          @media (width < $mDevice) {
+            width: 35%;
+          }
+          @media (width < $sDevice) {
+            width: 47%;
+          }
+          img {
+            width: 100%;
+            aspect-ratio: 16 /14;
+          }
+          .openPoint {
+            width: 100%;
+            height: 100%;
+            background: lightgray;
+            display: grid;
+            place-items: center;
+            text-transform: capitalize;
+          }
+        }
+
+        .artistImages {
+          width: 18%;
+          aspect-ratio: 16/16;
+          overflow: hidden;
+          @media (width < $lDevice) {
+            width: 25%;
+          }
+          @media (width < $mDevice) {
+            width: 35%;
+          }
+          @media (width < $sDevice) {
+            width: 47%;
+          }
+        }
+
+        &.active .artistImages {
+          position: relative;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  .showAllBtnDiv {
+    width: min(200px, 100%);
+    margin: auto;
+    padding: 2em 0;
+  }
+
+  //--reviwesContainer--
+
+  .reviwesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .item {
+      padding: 2em 1em;
+    }
+    // -fitlerReviewsDiv-
+    .reviwsBox {
+      .fitlerReviewsDiv {
+        width: min(150px, 100%);
+      }
+      .reviews {
+        margin-top: 1em;
+        .review {
+          margin-bottom: 10px;
+          .mainReview {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 10px;
+            .userimg img {
+              width: 90%;
+              aspect-ratio: 1;
+              border-radius: 50%;
+            }
+            .userReview {
+              .name {
+                font-size: 1.3em;
+                text-transform: capitalize;
+                margin-bottom: 7px;
+              }
+              .desc {
+                font-size: 1em;
+                margin-bottom: 7px;
+                width: min(700px, 98%);
+              }
+            }
+          }
+        }
+      }
+    }
+    // -giveReviewForm-
+    .giveReviewForm {
+      .reviewGiveForm {
+        width: min(500px, 100%);
+        .heading {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+        }
+        .starsDiv {
+          margin-bottom: 10px;
+        }
+        .textarea {
+          margin-bottom: 1em;
+        }
+        .submitBtn button {
+          font-size: $f-normal;
+          padding: 7px 2.5em;
+          border-radius: 54px;
+          text-transform: capitalize;
+          border: none;
+          background: $blurGradientColor;
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+
+  // --achievements container--
+  .artistAchievementContainer {
+    padding: 2em 0;
+    .artistAchievementBoxs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media (width < 600px) {
+        grid-template-columns: 1fr;
+      }
+      column-gap: 5vw;
+      row-gap: 1em;
+      // -css for card containet-
+      .title {
+        font-size: calc($f-normal + 3px);
+        margin-bottom: 5px;
+        color: $blackColor;
+      }
+      .academyName {
+        font-size: calc($f-normal);
+        margin-bottom: 5px;
+        color: $blackColor;
+      }
+      .date {
+        font-size: calc($f-normal);
+        margin-bottom: 5px;
+        color: $grayColor;
+      }
+      // -
+      .certificatesDiv {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1em;
+        .certificateCard {
+          border-radius: 7px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            aspect-ratio: 16/12;
+            border-radius: 7px;
+          }
+          .details {
+            padding: 5px;
+          }
+        }
+      }
+      // -
+      .othersDiv {
+        .heading {
+          font-size: $f-medium;
+          color: $brickRedColor;
+          font-weight: 600;
+          margin-bottom: 0.7em;
+        }
+        .list {
+          padding: 0 1.5em;
+          ol,
+          li {
+            list-style-type: decimal;
+          }
+        }
+      }
+    }
+  }
+
+  // --artistPackagesContainer--
+  .artistPackagesContainer {
+    padding: 2em 0;
+    .artistPackagesBoxs {
+      display: grid;
+      grid-template-columns: 30% 1fr 30%;
+
+      // --
+      .activity {
+        .heading {
+          font-size: $f-medium;
+          margin-bottom: 10px;
+        }
+        .categoryes {
+          margin: 2em 0;
+          display: inline-flex;
+          flex-direction: column;
+          row-gap: 10px;
+          label {
+            border: 1px solid;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+              background-color: $brickRedColor;
+              color: $whiteColor;
+              border-color: $whiteColor;
+            }
+          }
+        }
+      }
+      // --
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1em;
+        padding: 0 1em;
+        .planCard {
+          background-color: $lightWhiteBackground;
+          box-shadow: 0px 0px 10px lightgray;
+          border-radius: 7px;
+          .icon {
+            width: 100%;
+            height: 200px;
+            display: grid;
+            place-items: center;
+            img {
+              width: 100px;
+              aspect-ratio: 1;
+              border-radius: 50%;
+              outline: 1px solid;
+              outline-offset: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// --relatedArtistContainer--
+.artistDetailsPage .relatedArtistContainer {
+  padding: 1em 2em;
+  @media (width < $esDevice) {
+    padding: 1em;
+  }
+  .heading {
+    font-size: $f-large;
+    color: $brickRedColor;
+    margin-bottom: 1em;
+  }
+  // -relatedArtist-
+  .relatedArtist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3em;
+    @media (width < $lDevice) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+    @media (width < $mDevice) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+    }
+    // @media (width < $esDevice) {
+    //   grid-template-columns: repeat(1, 1fr);
+    // }
+  }
 }

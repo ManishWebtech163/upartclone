@@ -1,6 +1,9 @@
 .artistCard {
   width: 100%;
   overflow: hidden;
+  @media (max-width: $sDevice) {
+    font-size: 12px;
+  }
   .img {
     width: 100%;
     aspect-ratio: 16/14;
@@ -44,6 +47,7 @@
       align-items: center;
       gap: 5px;
       font-size: $f-normal;
+      grid-column: 1/-1;
     }
   }
 }

@@ -1,8 +1,8 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 import TextField from '@mui/material/TextField';
 
 
-export default function Textarea_common({ lable, rows, register, name, validations, error }) {
+export default function Textarea_common({ lable, rows, register, error }) {
     return (
         <>
             <TextField
@@ -12,8 +12,15 @@ export default function Textarea_common({ lable, rows, register, name, validatio
                 multiline
                 rows={rows}
                 color="secondary"
-                {...register(name, validations)}
+                {...register}
             />
         </>
     )
+}
+
+Textarea_common.propTypes = {
+    lable: PropTypes.string,
+    rows: PropTypes.node,
+    register: PropTypes.object,
+    error: PropTypes.string,
 }

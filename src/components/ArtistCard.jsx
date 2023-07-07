@@ -1,6 +1,6 @@
-import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import PropTypes from 'prop-types'
 
 export default function ArtistCard({ name }) {
     return (
@@ -17,4 +17,8 @@ export default function ArtistCard({ name }) {
             </div>
         </div>
     )
+}
+
+ArtistCard.propTypes = {
+    name: PropTypes.string
 }
